@@ -1,154 +1,97 @@
-﻿number,rule name,confidence,label,boolean,Example: ,Source
-1,Invoke-Expression,high,commandline,(iex OR invoke-expression),,https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
-2,New-Object,medium,commandline,(New-Object),,https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
-3,downloadstring,medium,commandline,(downloadstring),,https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
-4,DumpCreds,high,tool,(DumpCreds OR creds),,https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
-5,mimikatz,high,tool,(mimikatz),,https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
-6,invoke-webrequest,high,commandline,(invoke-webrequest),,https://medium.com/@CyberOPS.LittleDog/tryhackme-hacking-with-powershell-834d8b86ec4a
-7,encoding,high,commandline,(powershell AND (-e OR -enc OR -encodedcommand)),,https://unit42.paloaltonetworks.com/unit42-pulling-back-the-curtains-on-encodedcommand-powershell-attacks/
-8,get-hotfix,high,commandline,(get-hotfix),,https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.2
-9,passwordrequired,high,commandline,(password required),,
-10,invoke-command,high,commandline,(invoke-command),,
-11,pssession,high,commandline,(pssession),,
-12,Regsvr32.exe,high,commandline,(Regsvr32 OR (regsvr32 AND /I OR /s OR http IR https OR ftp OR scrobj.dll)),,
-13,nmap,high,tool,(nmap),,
-14,ncat,high,tool,((nc  OR netcat) AND ( -z OR -w OR -nlvp OR -nv OR -n OR -l OR -v OR -p OR -e)),,
-15,/bin/bash,high,linux,(bin AND bash),,
-16,socat,high,tool,(socat),,
-17,openssl,high,tool,(openssl AND (-newkey OR -nodes OR -keyout OR -days)),,
-18,set-executionpolicy unrestricted,high,commandline,(set-executionpolicy AND unrestricted),,
-19,wget,high,commandline,(wget),,
-20,downloadfile,high,commandline,(powershell AND (uploadfile OR downloadfile OR webclient)),,
-21,PS generic listener,high,commandline,(powershell AND (listener OR tcpclient)),,
-22,powercat,high,tool,(powercat),,
-23,grep linux passwords,medium,commandline,(grep AND passwd OR /etc/passwd),,
-24,masscan,medium,tool,(masscan),,
-25,nbtscan,medium,tool,(nbtscan),,
-26,certutil,high,commandline,(certutil AND (-urlcache OR -decode OR -encode OR -F OR -split)),,
-27,change,high,commandline,(change AND (logon OR port OR user)),,
-28,chcp,high,commandline,(chcp),,
-29,cipher,high,commandline,(cipher AND (-c OR -d OR -k or -e OR -h)),,
-30,auditpol,high,commandline,(auditpol),,
-31,bitsadmin,high,commandline,(bitsadmin),,
-32,arp,medium,commandline,(arp AND (-a OR -g)),,
-33,sed,medium,commandline,(sed AND /etc/),,
-34,onesixtyone,medium,tool,(onesixtyone),,
-35,snmpwalk,medium,tool,(snmpwalk),,
-36,website studd,high,web,((post OR curl OR wget OR get) AND (.js OR .zip OR .php OR .aspx OR exe OR .xml OR .txt)),,
-37,phymyadmin,high,web,(/phpmyadmin OR /manager/html),,
-38,powershell bypass,high,commandline,(powershell AND -executionpolicy AND bypass),,
-39,php session id,high,web,(GET OR POST AND PHPSESSID),,
-40,php?file,high,web,(php?file),,
-41,cmd =,high,web,(&cmd=),,
-42,simplehttpserver,high,commandline,(simplehttpserver),,
-43,php server,high,commandline,(php AND -s),,
-44,ruby run,high,script,(ruby AND -run),,
-45,busybox,high,tool,(busybox),,
-46,shell exec,high,web,(shell_exec),,
-47,sql,high,web,(php?id=1),,
-48,msfvenom,high,tool,(msfvenom),,
-49,metasploit trash,high,tool,(lhost OR rhost OR lport OR rport),,
-50,mshta.exe,mediun,web,(mshta AND (javascript OR .hta OR vbs OR http OR https OR winword OR excel OR powerpnt OR cmd OR powershell OR wscript OR cscript OR sh.exe OR bash.exe OR reg OR bitsadmin)),,
-51,hidden powershell,high,commandline,(powershell AND hidden),,
-52,powershell noprofile,high,commandline,(powershell AND -nop),,
-53,create shell,high,script,(createobject AND shell),,
-54,ftp shenanigans,high,tool,(ftp AND (-v OR -n OR -s)),,
-55,System.Net.WebClient,medium,commandline,(powershell AND System.Net.WebClient),,
-56,tftp,high,tool,(tftp AND put),,
-57,buffers,high,script,(kernel32.dll OR msvcrt.dll) AND (memset OR virtualalloc OR createthread)),,
-58,unrestricted execution policy,high,commandline,(powershell AND Unrestricted),,
-59,tasklist,medium,enumeration,(tasklist AND /SVC),,
-60,systeminfo,medium,enumeration,(systeminfo AND findstr),,
-61,route print,medium,enumeration,(route AND print),,
-62,firewall,medium,enumeration,(netsh AND advfirewall AND (action AND allow) OR show),,
-63,schtasks,high,enumeration,((schtasks OR at) AND query),,
-64,accesschk,high,tool,(accesschk),,
-65,get ACL,high,enumeration,(get-acl),,
-66,driverquery,medium,enumeration,(driveryquery),,
-67,pnpsigneddriver,high,enumeration,(Get-WmiObject AND Win32_PnPSignedDriver),,
-68,powershell priv esc,high,commandline,(powershell AND start-process AND -runas),,
-69,sigcheck,high,tool,(sigcheck),,
-70,fodhelper,high,tool,(fodhelper),,
-71,php passwords,high,web,(php AND user AND admin),,
-72,hashcat64,high,tool,(hashcat64),,
-73,plink,high,tool,((plink OR putty)AND (-r OR -pw),,
-74,netsh proxy,high,tool,(netsh AND (portproxy OR listenport OR listenaddress OR connectport OR connectaddress)),,
-75,net user domain,high,enumeration,(net AND /domain),,
-76,:GetCurrent Domain(),high,enumeration,(GetCurrent AND Domain),,
-77,import module,medium,commandline,(import-module),,
-78,Get-NetLoggedon,medium,enumeration,(Get-Net),,
-79,klist,medium,enumeration,(klist NOT tasklist),,
-80,pass and admin,medium,tool,(-pass AND (admin or -admin)),,
-81,pth-winexe,medium,tool,(pth-winexe),,
-82,net use,medium,commandline,"(net AND use AND ""\\"")",,
-83,psexec,high,tool,(psexec OR psexesvc),,
-84,kiwi,high,tool,(kiwi),,
-85,general invoke,medium,commandline,(powershell AND invoke),,
-86,icacls,medium,enumeration,(icacls AND c:),,
-87,ping,medium,enumeration,(ping AND -n AND 1),,
-88,juicypotato.exe,medium,tool,(juicypotato),,
-89,invoke command,high,commandline,(invoke-command AND (-session OR -scriptblock)),,
-90,copy item,high,commandline,(copy-item AND -tosession),,
-91,bloodhound,high,tool,(bloodhound),,
-92,UAC bypasses,high,commandline,(ms-settings AND Shell AND Open AND command),,
-93,UAC bypasses,high,commandline,(HKCU AND shell AND command),,
-94,remote thread,high,commandline,(kernel32dll AND loadlibraryA),,
-95,powershell remote thread,high,commandline,(powershell AND rundll32,,
-96,powershell non interactive,high,commandline,(powershell AND (-noni OR -noninteractive)),,
-97,,high,commandline,(powershell AND syncAppvPublishingServer.exe),,
-98,Shadow copies,high,commandline,(esentutil AND (vss OR /y)),,
-99,netscan,high,tool,(netscan.exe OR softperfect OR netscan.lic),,
-100,win32 Shadow Copies,high,commandline,(Win32_ShadowCopy),,
-101,routerscan,high,tool,(routerscan.exe),,
-102,grabff,high,tool,(grabff.exe),,
-103,rclone,high,commandline,(rclone.exe AND (pass OR user OR sync OR lsd OR remote OR ls OR --config OR copy OR certificate OR OR mega OR pcvloud OR ftp OR progress OR ignore OR auto-confirm OR transfers OR multi-threat)),,
-104,shadow copies 2,high,commandline,(vssadmin AND (shadow OR shadows)),,
-105,globalroot,high,commandline,(copy AND globalroot AND (sam or ntds.dit)),,
-106,cobaltstrike beacon,high,commandline,(post.1 OR aaa.stage OR .stage.),,
-107,internal ip lookup,high,web,((ipv4.icanhazip.com OR canireachthe.net OR ip.anysrc.net edns.ip-api.com OR wtfismyip.com OR checkip.dyndns.org  OR api.2ip.ua OR icanhazip.com OR api.ipify.org OR ip-api.com OR checkip.amazonaws.com  OR ipecho.net OR ipinfo.io OR ipv4bot.whatismyipaddress.com OR freegeoip.app) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)),,
-108,servicebus,high,commandline,((servicebus.windows.net OR HybridConnectionManager) AND (listener)),,
-109,userstorage,high,web,(userstorage.mega.co.nz),,
-110,JS with rundll,high,commandline,(rundll32 AND (javascript OR js)),,
-111,script pull objects,high,commandline,(getobject AND script),,
-112,msbuild,high,web,(MSBuild.exe),,
-113,regedit with dlls,high,commandline,((regsvcs OR regasm OR InstallUtil) AND (.dll)),,
-114,desktopappinstaller,high,commandline,(DesktopAppInstaller OR ms-appinstaller OR AppInstaller.exe),,
-115,password dumps,high,commandline,(fgexec OR dumpsvc OR cachedump OR mimidrv OR gsecdump OR servpw OR pwdump),,
-116,echo pipes,high,commandline,(pipe AND /c AND echo),,
-117,"rundll and dll,a",high,commandline,"(rundll AND /p AND dll,a)",,
-118,(DBUtil_2_3.Sys),high,commandline,(DBUtil_2_3.Sys),,
-119,WinDivert,high,commandline,(WinDivert.sys OR WinDivert64.sys),,
-120,Microsoft macros,high,commandline,(Win32_Process\:\:Create AND (winword.exe OR excel.exe OR powerpnt.exe)),,
-121,prefetch,high,commandline,((prefetch OR .pf) AND (svchost OR autorite OR remove-item)),,
-122,sdelete64,high,commandline,(sdelete64 AND (aaa OR zzz)),,
-123,spools,high,commandline,(spool AND drivers AND x64),,
-124,teamviewer,high,commandline,((teamviewer OR .log) AND (remove-item)),,
-125,pointandprintp,high,commandline,(pointandprint),,
-126,reg lanman,high,commandline,(reg AND lanmanserver),,
-127,EveryoneIncludesAnonymous,high,commandline,(EveryoneIncludesAnonymous),,
-128,RestrictAnonym,high,commandline,(RestrictAnonymous),,
-129,cmd with weird extensions,high,commandline,((cmd) AND (.vhd OR .bac OR .bak OR .wbcat OR .bkf OR .set OR .win OR .dsk)),,
-130,advanced ip scanner,high,commandline,( advanced AND ip AND scanner AND 2),,
-131,outlook and lnk files,high,web,(outlook AND .lnk),,
-132,Microsoft macros,high,commandline,(elevation_service.exe),,
-133,icacls and ini,high,commandline,(icacls AND .ini),,
-134,temp and .dmp,high,commandline,(temp AND .dmp),,
-135,lsass with .dmp,high,commandline,(lsass.dmp),,
-136,nppspy,high,tool,(nppspy),,
-137,lsass without wininit,high,commandline,(lsass NOT wininit),,
-138,lsass with weird extensions,high,commandline,(lsass AND (dmp OR zip OR rar OR dump)),,
-139,oracle and vbs,high,commandline,(oracle AND java AND (.vbs OR retrieve OR retrive)),,
-140,vhd files from online,high,commandline,((.vhd) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)),,
-141,kerberos ,high,commandline,(.kirbi),,
-142,mimilsa.log,high,commandline,(mimilsa.log),,
-143,microsoft office w/ weird extensions,high,commandline,((winword OR excel OR powerpnt) AND ((mdst OR sdiagnost OR .dll OR .ocx OR .com OR .ps1 OR .vbs OR .sys OR .bat OR .scr OR .proj)),,
-144,ntds through commandline,high,commandline,(ntds.dit AND (cmd OR powershell OR ps),,
-145,consolehost history txt,high,commandline,(ConsoleHost_history.txt OR StartupProfileData-Interactive),,
-146,tasks with extras,high,commandline,(tasks AND (appdata OR perflogs OR systemprofile)),,
-147,users and winsat,high,commandline,(users AND (winsat OR winmm)),,
-148,Windowsmedia player abuse,high,commandline,(Windows AND Media AND osk),,
-149,wscript with visual basic,high,commandline,((wscript OR cscript) AND (.jse OR .vbe OR .js OR .vba OR .vbs)),WScript or CScript Dropper (cea72823-df4d-4567-950c-0b579eaf0846),
-150,odd executables,high,commandline,((cmd OR powershell OR cscript OR wscript OR sh.exe OR bash.exe OR msbuild.exe OR certutil.exe) AND (public OR perflogs) AND (schtaks OR wmic OR mshta OR rundll32 OR forfiles OR scriptrunner OR certutil OR temp)),,
-151,sytem32 and wsmpty/wsmtxt,high,commandline,((sytem32 OR syswow64) AND (WsmPty.xsl OR WsmTxt.xsl)),,
-152,wbemcomm,high,commandline,(wbemcomn.dll),,
-153,kerberos issues,high,commandline,((pwdump OR kirbi OR pwhashes OR wce_ccache OR wce_krbtkts OR fgdump-log) AND (test OR lsremora OR fgexec OR wceaux OR sam.out OR security.out OR system.out OR ntds.out OR dumpext.dll OR dumpsvc.exe OR cachedump.exe OR pstgdump.exe OR servpw.exe OR sercpw64.exe OR pwdump.exe OR procdump64)),,
+number	rule name	confidence	boolean	label	Source
+1	Invoke-Expression	high	(iex OR invoke-expression)	commandline	https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
+2	New-Object	medium	(New-Object)	commandline	https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
+3	downloadstring	medium	(downloadstring)	commandline	https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
+4	DumpCreds	high	(DumpCreds OR creds)	tool	https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
+5	mimikatz	high	(mimikatz)	tool	https://www.rapid7.com/blog/post/2019/08/08/the-importance-of-preventing-and-detecting-malicious-powershell-attacks/
+6	invoke-webrequest	high	(invoke-webrequest)	commandline	https://medium.com/@CyberOPS.LittleDog/tryhackme-hacking-with-powershell-834d8b86ec4a
+7	encoding	high	(powershell AND (-e OR -enc OR -encodedcommand))	commandline	https://unit42.paloaltonetworks.com/unit42-pulling-back-the-curtains-on-encodedcommand-powershell-attacks/
+8	get-hotfix	high	(get-hotfix)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.2
+9	passwordrequired	high	(password required)	commandline	https://github.com/PowerShell/PowerShell/issues/11965
+10	invoke-command	high	(invoke-command)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2
+11	pssession	high	(pssession)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-7.2
+12	Regsvr32.exe	high	(Regsvr32 OR (regsvr32 AND /I OR /s OR http IR https OR ftp OR scrobj.dll))	commandline	https://lolbas-project.github.io/lolbas/Binaries/Regsvr32/
+13	nmap	high	(nmap)	tool	https://nmap.org/
+14	ncat	high	((nc  OR netcat) AND ( -z OR -w OR -nlvp OR -nv OR -n OR -l OR -v OR -p OR -e))	tool	https://nmap.org/ncat/
+15	/bin/bash	high	(bin AND bash)	linux	https://medium.com/@codingmaths/bin-bash-what-exactly-is-this-95fc8db817bf
+16	socat	high	(socat)	tool	https://www.redhat.com/sysadmin/getting-started-socat
+17	openssl	high	(openssl AND (-newkey OR -nodes OR -keyout OR -days))	tool	https://geekflare.com/openssl-commands-certificates/
+18	set-executionpolicy unrestricted	high	(set-executionpolicy AND unrestricted)	commandline	https://github.com/undergroundwires/privacy.sexy/issues/53
+19	wget	high	(wget)	commandline	https://linuxize.com/post/wget-command-examples/
+20	downloadfile	high	(powershell AND (uploadfile OR downloadfile OR webclient))	commandline	https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/deprecated/powershell_suspicious_download.yml
+21	PS generic listener	high	(powershell AND (listener OR tcpclient))	commandline	https://riptutorial.com/powershell/example/18117/tcp-listener
+22	powercat	high	(powercat)	tool	https://github.com/besimorhino/powercat
+23	grep linux passwords	medium	(grep AND passwd OR /etc/passwd)	commandline	https://explainshell.com/explain?cmd=grep+%24USER+%2Fetc%2Fpasswd#:~:text=explainshell.com%20%2D%20grep%20%24USER%20%2Fetc%2Fpasswd&text=grep%20searches%20the%20named%20input,grep%20prints%20the%20matching%20lines.
+24	masscan	medium	(masscan)	tool	https://github.com/robertdavidgraham/masscan
+25	nbtscan	medium	(nbtscan)	tool	http://www.unixwiz.net/tools/nbtscan.html
+26	certutil	high	(certutil AND (-urlcache OR -decode OR -encode OR -F OR -split))	commandline	https://www.bleepingcomputer.com/news/security/certutilexe-could-allow-attackers-to-download-malware-while-bypassing-av/
+27	change	high	(change AND (logon OR port OR user))	commandline	https://www.techrepublic.com/article/change-the-terminal-services-listening-port-in-windows-2000/
+28	chcp	high	(chcp)	commandline	https://www.computerhope.com/chcphlp.htm#:~:text=The%20chcp%20command%20is%20used,be%20loaded%2C%20and%20the%20country.
+29	cipher	high	(cipher AND (-c OR -d OR -k or -e OR -h))	commandline	https://www.thewindowsclub.com/cipher-command-line-tool-windows
+30	auditpol	high	(auditpol)	commandline	https://www.microsoftpressstore.com/articles/article.aspx?p=2217266&seqNum=3#:~:text=Auditpol.exe%20is%20a%20command,settings%20with%20the%20%2FSet%20subcommand
+31	bitsadmin	high	(bitsadmin)	commandline	https://docs.microsoft.com/en-us/windows/win32/bits/bitsadmin-tool
+32	arp	medium	(arp AND (-a OR -g))	commandline	https://www.meridianoutpost.com/resources/articles/command-line/arp.php
+33	sed	medium	(sed AND /etc/)	commandline	https://stackoverflow.com/questions/30139358/changing-etc-hosts-with-sed-command
+34	onesixtyone	medium	(onesixtyone)	tool	https://www.kali.org/tools/onesixtyone/#:~:text=onesixtyone%20is%20a%20simple%20SNMP,software%20running%20on%20the%20device.
+35	snmpwalk	medium	(snmpwalk)	tool	https://www.comparitech.com/net-admin/snmpwalk-examples-windows-linux/
+36	website studd	high	((post OR curl OR wget OR get) AND (.js OR .zip OR .php OR .aspx OR exe OR .xml OR .txt))	web	https://stackoverflow.com/questions/32626800/post-request-of-an-exe-application
+37	phymyadmin	high	(/phpmyadmin OR /manager/html)	web	https://www.phpmyadmin.net/
+38	powershell bypass	high	(powershell AND -executionpolicy AND bypass)	commandline	https://riptutorial.com/powershell/example/20107/bypassing-execution-policy-for-a-single-script
+39	php session id	high	(GET OR POST AND PHPSESSID)	web	https://stackoverflow.com/questions/1370951/what-is-phpsessid#:~:text=PHPSESSID%20is%20an%20auto%20generated,this%20answer%20to%20receive%20notifications
+40	php?file	high	(php?file)	web	https://www.php.net/manual/en/function.file.php
+41	cmd =	high	(&cmd=)	web	https://www.itjungle.com/2005/08/31/fhg083105-story01/
+42	simplehttpserver	high	(simplehttpserver)	commandline	https://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver
+43	php server	high	(php AND -s)	commandline	https://null-byte.wonderhowto.com/how-to/php-for-hackers-part-1-introduction-and-setting-up-0169117/
+44	ruby run	high	(ruby AND -run)	script	https://github.com/ruby
+45	busybox	high	(busybox)	tool	https://busybox.net/downloads/BusyBox.html
+46	shell exec	high	(shell_exec)	web	https://www.php.net/manual/en/function.shell-exec.php
+47	sql	high	(php?id=1)	web	https://www.php.net/
+48	msfvenom	high	(msfvenom)	tool	https://www.offensive-security.com/metasploit-unleashed/msfvenom/
+49	metasploit trash	high	(lhost OR rhost OR lport OR rport)	tool	https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/
+50	mshta.exe	mediun	(mshta AND (javascript OR .hta OR vbs OR http OR https OR winword OR excel OR powerpnt OR cmd OR powershell OR wscript OR cscript OR sh.exe OR bash.exe OR reg OR bitsadmin))	web	https://www.tutorialspoint.com/hacking-with-hta-file-mshta-exe
+51	hidden powershell	high	(powershell AND hidden)	commandline	https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/deprecated/powershell_suspicious_invocation_generic.yml
+52	powershell noprofile	high	(powershell AND -nop)	commandline	https://docs.microsoft.com/en-us/powershell/
+53	create shell	high	(createobject AND shell)	script	https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/bb776890(v=vs.85)
+54	ftp shenanigans	high	(ftp AND (-v OR -n OR -s))	tool	https://www.hostinger.com/tutorials/what-is-ftp
+55	System.Net.WebClient	medium	(powershell AND System.Net.WebClient)	commandline	https://stackoverflow.com/questions/41819606/how-to-download-a-file-with-powershell-system-net-webclient-and-custom-user-agen
+56	tftp	high	(tftp AND put)	tool	https://superuser.com/questions/581812/put-file-with-tftp-client-in-linux
+57	buffers	high	(kernel32.dll OR msvcrt.dll) AND (memset OR virtualalloc OR createthread))	script	https://www.pinvoke.net/default.aspx/msvcrt/memset.html
+58	unrestricted execution policy	high	(powershell AND Unrestricted)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2
+59	tasklist	medium	(tasklist AND /SVC)	enumeration	https://www.computerhope.com/tasklist.htm
+60	systeminfo	medium	(systeminfo AND findstr)	enumeration	https://www.windows-commandline.com/system-information-systeminfo-command/
+61	route print	medium	(route AND print)	enumeration	https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/route_ws2008
+62	firewall	medium	(netsh AND advfirewall AND (action AND allow) OR show)	enumeration	https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/netsh-advfirewall-firewall-control-firewall-behavior
+63	schtasks	high	((schtasks OR at.exe) AND query)	enumeration	https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks
+64	accesschk	high	(accesschk)	tool	https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk
+65	get ACL	high	(get-acl)	enumeration	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-acl?view=powershell-7.2
+66	driverquery	medium	(driveryquery)	enumeration	https://www.computerhope.com/driverquery.htm#:~:text=The%20driverquery%20command%20enables%20an,list%20of%20installed%20device%20drivers.
+67	pnpsigneddriver	high	(Get-WmiObject AND Win32_PnPSignedDriver)	enumeration	https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/aa394354(v=vs.85)
+68	powershell priv esc	high	(powershell AND start-process AND -runas)	commandline	https://stackoverflow.com/questions/28989750/running-powershell-as-another-user-and-launching-a-script
+69	sigcheck	high	(sigcheck)	tool	https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck
+70	fodhelper	high	(fodhelper)	tool	https://www.oreilly.com/library/view/mastering-kali-linux/9781789340563/1124000a-2945-4408-99f3-e5f6c420f7e3.xhtml#:~:text=fodhelper.exe%20is%20the%20executable,exe%20to%20bypass%20the%20UAC.
+71	php passwords	high	(php AND user AND admin)	web	https://www.php.net/manual/en/function.password-hash.php
+72	hashcat64	high	(hashcat64)	tool	https://hashcat.net/hashcat/
+73	plink	high	((plink OR putty)AND (-r OR -pw)	tool	https://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter7.html
+74	netsh proxy	high	(netsh AND (portproxy OR listenport OR listenaddress OR connectport OR connectaddress))	tool	https://docs.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh-interface-portproxy
+75	net user domain	high	(net AND /domain)	enumeration	https://www.lifewire.com/net-user-command-2618097
+76	:GetCurrent Domain()	high	(GetCurrent AND Domain)	enumeration	https://stackoverflow.com/questions/2085744/how-do-i-get-the-current-username-in-windows-powershell
+77	import module	medium	(import-module)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.2
+78	Get-NetLoggedon	medium	(Get-Net)	enumeration	https://docs.microsoft.com/en-us/powershell/module/netadapter/get-netadapter?view=windowsserver2022-ps
+79	klist	medium	(klist)	enumeration	https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/klist
+80	pass and admin	medium	(-pass AND (admin or -admin))	tool	https://superuser.com/questions/219391/using-command-prompt-arguments-to-run-a-file-with-arguments-as-an-administrato
+81	pth-winexe	medium	(pth-winexe)	tool	https://infinitelogins.com/2020/09/05/popping-remote-shells-pth-winexe-on-windows/
+82	net use	medium	(net AND use AND "\\")	commandline	https://www.lifewire.com/net-use-command-2618096
+83	psexec	high	(psexec OR psexesvc)	tool	https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_tool_psexec.yml
+84	kiwi	high	(kiwi)	tool	https://www.kiwisyslog.com/other-it-products
+85	general invoke	medium	(powershell AND invoke)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2
+86	icacls	medium	(icacls AND c:)	enumeration	https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls
+87	ping	medium	(ping AND -n AND 1)	enumeration	https://riptutorial.com/batch-file/example/28398/ping
+88	juicypotato.exe	medium	(juicypotato)	tool	https://github.com/ohpe/juicy-potato
+89	invoke command	high	(invoke-command AND (-session OR -scriptblock))	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2
+90	copy item	high	(copy-item AND -tosession)	commandline	https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.2
+91	bloodhound	high	(bloodhound)	tool	https://attack.mitre.org/software/S0521/#:~:text=BloodHound%20is%20an%20Active%20Directory,paths%20within%20an%20AD%20environment.
+92	UAC bypasses	high	(ms-settings AND Shell AND Open AND command)	commandline	https://pentestlab.blog/2017/06/07/uac-bypass-fodhelper/
+93	UAC bypasses	high	(HKCU AND shell AND command)	commandline	https://social.technet.microsoft.com/Forums/en-US/58ceb750-29ef-4262-a626-6cc132611d2f/trying-to-change-hkcu-registry-value-shell-in-a-task-sequence?forum=configmanagerosd
+94	remote thread	high	(kernel32dll AND loadlibraryA)	commandline	https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/create_remote_thread/sysmon_createremotethread_loadlibrary.yml
+95	powershell remote thread	high	(powershell AND rundll32	commandline	https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/create_remote_thread/sysmon_susp_powershell_rundll32.yml
+96	powershell non interactive	high	(powershell AND (-noni OR -noninteractive))	commandline	https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/deprecated/powershell_suspicious_invocation_generic.yml
