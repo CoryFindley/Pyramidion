@@ -1,1 +1,250 @@
-(.ps1 AND (invoke-dllinjection OR invoke-wmicommand OR get-gppassword OR get-keystrike OR get-vaultcredential OR invoke-credential OR -ninjacopy OR tokenmanipulation OR minidump OR shadowcopytools OR reflectiveprinjection OR timedscreeshot OR userhunter OR gpolocation OR aclscanner OR downgradeaccount OR serviceunqquoted OR servicefilepermission OR servicepermission OR serviceabuse OR servicebiany OR regautologon OR vulnautorun OR vulnschtask OR unattendedinstallfile OR webconfig OR applicationhost OR regalwaysinstallelevated OR unconstrained OR regbackdoor OR scrnsavebackdoor OR backdoor OR duplicatetoken OR psuacme OR remove-update OR check-vm OR lsasecret OR passhashes OR targetscreen OR port-scan OR poshrathttp OR powershelltcp OR powershellwmi OR exfiltration OR persistence OR captureserver OR shellcode OR chromedump OR clipboardcontents OR foxdump OR indexteditem OR screenshot OR inveigh OR netripper OR egresscheck OR postexfil OR psinject OR runas OR mailraider OR honeyhash OR macattribute OR dssync OR powerdump OR jboss OR thunderstruck OR voicetroll OR wallpaper OR psexec OR sshcommand OR securitypackages OR install-ssp OR backdoorlnk OR powerbreach OR sitelistpassword OR bypassuac OR tater OR wscriptbypassUAC OR powerup OR powerview OR rickastley OR find-fruit OR http-login trusteddocuments OR paranoia OR winenum OR arpscan portscan OR reversednslookup OR smbscanner OR mimikittenz)) OR      (ba9ea7344a4a5f591d6e5dc32a13494b) OR      (outlook AND appdata AND forms) OR      ((startup AND (word OR excel OR powerpnt) AND (.wll OR .xll))) OR      (microsoft AND addins AND (.xlam OR .xla)) OR      (temp AND dubug.bin) OR      (powershell AND .bat) OR      (umworkerprocess.exe NOT cleanup.bin NOT .txt NOT .log NOT .cfg) OR      (svchost OR rundll32 OR services OR powershell OR regsvr32 OR spoolsv OR lsass OR smss OR csrss OR conhost OR wininit OR lsm OR winlogon OR explorer.exe OR taskhost OR task,gr OR sihost OR runtimebroker OR smartscreen OR dllhost OR audiodg NOT system32 NOT syswow64 NOT winsxs NOT dism NOT setuphost) OR      (updata AND oci.dll) OR      (MoriyaStreamWatchmen.sys) OR      (physmem.sys OR imjpueact OR imtcprot OR imecpmeid OR pac.dat OR tuptask.dat OR startwus.dat OR wimbootconfiguations.ini) OR      ((SAM_USER OR SAM_GROUP) AND (512 OR 502 OR 500 OR 505 OR 519 OR 520 OR 544 OR551 OR 555)) OR      (powershell AND frombase64string) OR      (Enable-WindowsOptionalFeature) OR      (wmic AND (shadowcopy OR UUID OR delete)) OR      (wmic AND process AND node) OR      (schtasks AND start) OR      (schtasks AND (temp OR tmp)) OR      (attrib AND +h) OR      (runonce AND .exe) OR      (net AND (group OR localgroup) AND admin) OR      (mshta AND public) OR      (regedit AND -single) OR      (netsh AND new AND enable AND yes) OR      (netsh AND allowedprogram) OR      (shadowcopy AND wmi) OR      (uninstall-windowsfeature AND defender) OR      (disablerealtimemonitoring) OR      (disableantispyware) OR      (DisableBehaviorMonitoring) OR      (disableantivirus) OR      (DisableIOAVProtection) OR      (DisableOnAccessProtection) OR      (reg AND defender) OR      (reg AND CurrentControlSet) OR      (DefenderApiLogger) OR      (ContextMenuHandlers) OR      (-ExclusionExtension) OR      (disable AND defender) OR      (MpCmdRun AND remove) OR      (schtasks AND defender) OR      ((temp OR tmp)AND bat) OR      (conf AND log) OR      (ping AND nul AND del) OR      (cmd and (token OR tokens)) OR      (wevtutil AND cl) OR      (lsass AND proc) OR      (comsvcs.dll) OR      (dsquery AND subnet) OR      (test AND dclist) OR      (quser) OR      (net AND view AND (all OR domain)) OR      (takeown) OR      (mstsc AND "$") OR      (Enable-NetFirewallRule) OR      (set-itemproperty AND (HKLM OR HKCU)) OR      (msiexec AND (http: OR https:)) OR      (resize AND shadow) OR      (net AND stop AND "/y") OR      (sc AND config AND disabled) OR      (iisreset) OR      (wmic AND (node OR netlogin) AND get) OR      (wmic AND call) OR      (debugger AND "Image File Execution") OR (iex OR invoke-expression) OR      (New-Object) OR      (downloadstring) OR      (DumpCreds OR creds) OR      (mimikatz) OR      (invoke-webrequest) OR      (powershell AND (-e OR -enc OR -encodedcommand)) OR      (get-hotfix) OR      (password required) OR      (invoke-command) OR      (pssession) OR      (Regsvr32 OR (regsvr32 AND /I OR /s OR http IR https OR ftp OR scrobj.dll)) OR      (nmap) OR      ((nc OR netcat) AND ( -z OR -w OR -nlvp OR -nv OR -n OR -l OR -v OR -p OR -e)) OR      (bin AND bash) OR      (socat) OR      (openssl AND (-newkey OR -nodes OR -keyout OR -days)) OR      (set-executionpolicy AND unrestricted) OR      (wget) OR      (powershell AND (uploadfile OR downloadfile OR webclient)) OR      (powershell AND (listener OR tcpclient)) OR      (powercat) OR      (grep AND passwd OR /etc/passwd) OR      (masscan) OR      (nbtscan) OR      (certutil AND (-urlcache OR -decode OR -encode OR -F OR -split)) OR      (change AND (logon OR port OR user)) OR      (chcp) OR      (cipher AND (-c OR -d OR -k or -e OR -h)) OR      (auditpol) OR      (bitsadmin) OR      (arp AND (-a OR -g)) OR      (sed AND /etc/) OR      (onesixtyone) OR      (snmpwalk) OR      ((post OR curl OR wget OR get) AND (.js OR .zip OR .php OR .aspx OR exe OR .xml OR .txt)) OR      (/phpmyadmin OR /manager/html) OR      (powershell AND -executionpolicy AND bypass) OR      (GET OR POST AND PHPSESSID) OR      (simplehttpserver) OR      (php AND -s) OR      (ruby AND -run) OR      (busybox) OR      (shell_exec) OR      (php?id=1) OR      (msfvenom) OR      (lhost OR rhost OR lport OR rport) OR      (mshta AND (javascript OR .hta OR vbs OR http OR https OR winword OR excel OR powerpnt OR cmd OR powershell OR wscript OR cscript OR sh.exe OR bash.exe OR reg OR bitsadmin)) OR      (powershell AND hidden) OR      (powershell AND -nop) OR      (createobject AND shell) OR      (ftp AND (-v OR -n OR -s)) OR      (powershell AND System.Net.WebClient) OR      (tftp AND put) OR      ((kernel32.dll OR msvcrt.dll) AND (memset OR virtualalloc OR createthread)) OR      (powershell AND Unrestricted) OR      (tasklist AND /SVC) OR      (systeminfo AND findstr) OR      (route AND print) OR      (netsh AND advfirewall AND (action AND allow) OR show) OR      ((schtasks OR at.exe) AND query) OR      (accesschk) OR      (get-acl) OR      (driveryquery) OR      (Get-WmiObject AND Win32_PnPSignedDriver) OR      (powershell AND start-process AND -runas) OR      (sigcheck) OR      (fodhelper) OR      (php AND user AND admin) OR      (hashcat64) OR      ((plink OR putty)AND (-r OR -pw)) OR      (netsh AND (portproxy OR listenport OR listenaddress OR connectport OR connectaddress)) OR      (net AND /domain) OR      (GetCurrent AND Domain) OR      (import-module) OR      (Get-Net) OR      (klist) OR      (-pass AND (admin or -admin)) OR      (pth-winexe) OR      (net AND use AND "\\") OR      (psexec OR psexesvc) OR      (kiwi) OR      (powershell AND invoke) OR      (icacls AND c:) OR      (ping AND -n AND 1) OR      (juicypotato) OR      (invoke-command AND (-session OR -scriptblock)) OR      (copy-item AND -tosession) OR      (bloodhound) OR      (ms-settings AND Shell AND Open AND command) OR      (HKCU AND shell AND command) OR      (kernel32dll AND loadlibraryA) OR      (powershell AND rundll32) OR      (powershell AND (-noni OR -noninteractive)) OR      (powershell AND syncAppvPublishingServer.exe) OR      (esentu AND (vss OR /y)) OR      (netscan.exe OR softperfect OR netscan.lic) OR      (Win32_ShadowCopy) OR      (routerscan.exe) OR      (grabff.exe) OR      (rclone.exe AND (pass OR user OR sync OR lsd OR remote OR ls OR --config OR copy OR certificate OR mega OR pcloud OR ftp OR progress OR ignore OR auto-confirm OR transfers OR multi-thread)) OR      (vssadmin AND (shadow OR shadows)) OR      (copy AND globalroot AND (sam or ntds.dit)) OR      (post.1 OR aaa.stage OR .stage.) OR      ((ipv4.icanhazip.com OR canireachthe.net OR ip.anysrc.net edns.ip-api.com OR wtfismyip.com OR checkip.dyndns.org OR api.2ip.ua OR icanhazip.com OR api.ipify.org OR ip-api.com OR checkip.amazonaws.com OR ipecho.net OR ipinfo.io OR ipv4bot.whatismyipaddress.com OR freegeoip.app) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)) OR      ((servicebus.windows.net OR HybridConnectionManager) AND (listener)) OR      (userstorage.mega.co.nz) OR      (rundll32 AND (javascript OR js)) OR      (getobject AND script) OR      (MSBuild.exe) OR      ((regsvcs OR regasm OR InstallUtil) AND (.dll)) OR      (DesktopAppInstaller OR ms-appinstaller OR AppInstaller.exe) OR      (fgexec OR dumpsvc OR cachedump OR mimidrv OR gsecdump OR servpw OR pwdump) OR      (pipe AND /c AND echo AND (cmd OR comspec)) OR      (rundll AND /p AND dll,a) OR      (DBUtil_2_3.Sys) OR      (WinDivert.sys OR WinDivert64.sys) OR      (Win32_Process\:\:Create AND (winword.exe OR excel.exe OR powerpnt.exe)) OR      ((prefetch OR .pf) AND (svchost OR autorite OR remove-item)) OR      (sdelete64 AND (aaa OR zzz)) OR      (spool AND drivers AND x64) OR      (teamviewer OR .log) OR      (pointandprint) OR      (reg AND lanmanserver) OR      (EveryoneIncludesAnonymous) OR      (RestrictAnonymous) OR      ((cmd) AND (.vhd OR .bac OR .bak OR .wbcat OR .bkf OR .set OR .win OR .dsk)) OR      (advanced AND ip AND scanner AND 2) OR      (outlook AND .lnk) OR      (elevation_service.exe AND msiexec) OR      (icacls AND .ini) OR      (temp AND .dmp) OR      (lsass.dmp) OR      (nppspy) OR      (lsass NOT wininit) OR      (lsass AND (dmp OR zip OR rar OR dump)) OR      (oracle AND java AND (.vbs OR retrieve OR retrive) AND .exe) OR      ((.vhd) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)) OR      (.kirbi) OR      (mimilsa.log) OR      ((winword OR excel OR powerpnt) AND (mdst OR sdiagnost OR .dll OR .ocx OR .com OR .ps1 OR .vbs OR .sys OR .bat OR .scr OR .proj)) OR      (ntds.dit AND (cmd OR powershell OR ps)) OR      (ConsoleHost_history.txt OR StartupProfileData-Interactive) OR      (tasks AND (appdata OR perflogs OR systemprofile)) OR      (users AND (winsat OR winmm)) OR      (Windows AND Media AND osk) OR      ((wscript OR cscript) AND (.jse OR .vbe OR .js OR .vba OR .vbs)) OR      (wbemcomn.dll) OR      ((pwdump OR kirbi OR pwhashes OR wce_ccache OR wce_krbtkts OR fgdump-log) AND (test OR lsremora OR fgexec OR wceaux OR sam.out OR security.out OR system.out OR ntds.out OR dumpext.dll OR dumpsvc.exe OR cachedump.exe OR pstgdump.exe OR servpw.exe OR sercpw64.exe OR pwdump.exe OR procdump64)) OR      ((syswow64) AND (mshta OR excel OR winword OR powerpnt OR cscript OR wscript)) OR      (htool OR hacktool OR (asp AND backdoor) OR (jsp AND backdoor) OR (php AND backdoor) OR webshell OR portscan OR .wincred OT plugx OR korplug OR chopper OR xscan OR clearlog OR aspxspy) OR      (MsiInstaller AND test.pkg) OR      (powershell AND (-w OR -windowstyle OR -window) AND hidden) OR      (powershell AND reg AND add AND currentversion AND run) OR      (bypass AND -noprofile AND hidden AND new-object AND sytem.net.webclient AND .download) OR      (convert AND frombase64string) OR      (dumpert) OR      (updata) OR      (127.0 AND Admin) OR      (users AND config AND rclone) OR      (vbaproject.otm AND outlook) OR      (temp AND (SAM OR hive)) OR      (winword AND inetcache AND .cab) OR      (temp AND .inf) OR      (users AND desktop AND txt) OR      (.cmdline) OR      (custom AND .sdb) OR      (unattend.xml) OR      (scrcons.exe) OR      (api-ms-win-core-kernel32-legacy-l1.DLL) OR      (ieinstal AND temp AND consent) OR      (users AND pe396) OR      (consent AND comctl32) OR      (programs AND startup AND mstsc.exe) OR      (profile.ps1) OR      (procexp152.sys AND temp) OR      (.pfx) OR      (desktop.ii NOT C:\Windows OR "C:\Program Files") OR      (CLR AND usagelogs AND (mshta OR cscript OR wscript OR regsvr32 OR wmic OR rundll32 OR svchost)) OR      (.sch AND schcache (NOT svchost NOT dllhost NOT mmc.exe NOT powershell NOT ccmexec NOT cylance)) OR      (start AND menu AND programs AND startup) OR      (tmp AND .bat AND .dll) OR      (temp AND SAM AND .dmp) OR      (poweshell AND startup AND .lnk) OR       ((cmd OR powershell OR cscript OR wscript OR sh.exe OR bash.exe OR msbuild.exe OR certutil.exe) AND (public OR perflogs) AND (schtaks OR wmic OR mshta OR rundll32 OR forfiles OR scriptrunner OR certutil OR temp)) OR      ((NOT system32 NOT syswow64) AND (WsmPty.xsl OR WsmTxt.xsl)) NOT tiworker NOT svchost
+(iex OR invoke-expression) OR
+(New-Object) OR
+(downloadstring) OR
+(DumpCreds OR creds) OR
+(mimikatz) OR
+(invoke-webrequest) OR
+(powershell AND (-e OR -enc OR -encodedcommand)) OR
+(get-hotfix) OR
+(password required) OR
+(invoke-command) OR
+(pssession) OR
+(Regsvr32 OR (regsvr32 AND /I OR /s OR http IR https OR ftp OR scrobj.dll)) OR
+(nmap) OR
+((nc  OR netcat) AND ( -z OR -w OR -nlvp OR -nv OR -n OR -l OR -v OR -p OR -e)) OR
+(bin AND bash) OR
+(socat) OR
+(openssl AND (-newkey OR -nodes OR -keyout OR -days)) OR
+(set-executionpolicy AND unrestricted) OR
+(wget) OR
+(powershell AND (uploadfile OR downloadfile OR webclient)) OR
+(powershell AND (listener OR tcpclient)) OR
+(powercat) OR
+(grep AND passwd OR /etc/passwd) OR
+(masscan) OR
+(nbtscan) OR
+(certutil AND (-urlcache OR -decode OR -encode OR -F OR -split)) OR
+(change AND (logon OR port OR user)) OR
+(chcp) OR
+(cipher AND (-c OR -d OR -k or -e OR -h)) OR
+(auditpol) OR
+(bitsadmin) OR
+(arp AND (-a OR -g)) OR
+(sed AND /etc/) OR
+(onesixtyone) OR
+(snmpwalk) OR
+((post OR curl OR wget OR get) AND (.js OR .zip OR .php OR .aspx OR exe OR .xml OR .txt)) OR
+(/phpmyadmin OR /manager/html) OR
+(powershell AND -executionpolicy AND bypass) OR
+(GET OR POST AND PHPSESSID) OR
+(simplehttpserver) OR
+(php AND -s) OR
+(ruby AND -run) OR
+(busybox) OR
+(shell_exec) OR
+(msfvenom) OR
+(lhost OR rhost OR lport OR rport) OR
+(mshta AND (javascript OR .hta OR vbs OR http OR https OR winword OR excel OR powerpnt OR cmd OR powershell OR wscript OR cscript OR sh.exe OR bash.exe OR reg OR bitsadmin)) OR
+(powershell AND hidden) OR
+(powershell AND -nop) OR
+(createobject AND shell) OR
+(ftp AND (-v OR -n OR -s)) OR
+(powershell AND System.Net.WebClient) OR
+(tftp AND put) OR
+((kernel32.dll OR msvcrt.dll) AND (memset OR virtualalloc OR createthread)) OR
+(powershell AND Unrestricted) OR
+(tasklist AND /SVC) OR
+(systeminfo AND findstr) OR
+(route AND print) OR
+(netsh AND advfirewall AND (action AND allow) OR show) OR
+((schtasks OR at.exe) AND query) OR
+(accesschk) OR
+(get-acl) OR
+(driveryquery) OR
+(Get-WmiObject AND Win32_PnPSignedDriver) OR
+(powershell AND start-process AND -runas) OR
+(sigcheck) OR
+(fodhelper) OR
+(php AND user AND admin) OR
+(hashcat64) OR
+((plink OR putty)AND (-r OR -pw)) OR
+(netsh AND (portproxy OR listenport OR listenaddress OR connectport OR connectaddress)) OR
+(net AND /domain) OR
+(GetCurrent AND Domain) OR
+(import-module) OR
+(Get-Net) OR
+(klist) OR
+(-pass AND (admin or -admin)) OR
+(pth-winexe) OR
+(net AND use AND "\\") OR
+(psexec OR psexesvc) OR
+(kiwi) OR
+(powershell AND invoke) OR
+(icacls AND c:) OR
+(ping AND -n AND 1) OR
+(juicypotato) OR
+(invoke-command AND (-session OR -scriptblock)) OR
+(copy-item AND -tosession) OR
+(bloodhound) OR
+(ms-settings AND Shell AND Open AND command) OR
+(HKCU AND shell AND command) OR
+(kernel32dll AND loadlibraryA) OR
+(powershell AND rundll32) OR
+(powershell AND (-noni OR -noninteractive)) OR
+(powershell AND syncAppvPublishingServer.exe) OR
+(esentu AND (vss OR /y)) OR
+(netscan.exe OR softperfect OR netscan.lic) OR
+(Win32_ShadowCopy) OR
+(routerscan.exe) OR
+(grabff.exe) OR
+(rclone.exe AND (pass OR user OR sync OR lsd OR remote OR ls OR --config OR copy OR certificate OR  mega OR pcloud OR ftp OR progress OR ignore OR auto-confirm OR transfers OR multi-thread)) OR
+(vssadmin AND (shadow OR shadows)) OR
+(copy AND globalroot AND (sam or ntds.dit)) OR
+(post.1 OR aaa.stage OR .stage.) OR
+((ipv4.icanhazip.com OR canireachthe.net OR ip.anysrc.net edns.ip-api.com OR wtfismyip.com OR checkip.dyndns.org  OR api.2ip.ua OR icanhazip.com OR api.ipify.org OR ip-api.com OR checkip.amazonaws.com  OR ipecho.net OR ipinfo.io OR ipv4bot.whatismyipaddress.com OR freegeoip.app) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)) OR
+((servicebus.windows.net OR HybridConnectionManager) AND (listener)) OR
+(userstorage.mega.co.nz) OR
+(rundll32 AND (javascript OR js)) OR
+(getobject AND script) OR
+(MSBuild.exe) OR
+((regsvcs OR regasm OR InstallUtil) AND (.dll)) OR
+(DesktopAppInstaller OR ms-appinstaller OR AppInstaller.exe) OR
+(fgexec OR dumpsvc OR cachedump OR mimidrv OR gsecdump OR servpw OR pwdump) OR
+(pipe AND /c AND echo AND (cmd OR comspec)) OR
+(rundll AND /p AND dll,a) OR
+(DBUtil_2_3.Sys) OR
+(WinDivert.sys OR WinDivert64.sys) OR
+(Win32_Process\:\:Create AND (winword.exe OR excel.exe OR powerpnt.exe)) OR
+((prefetch OR .pf) AND (svchost OR autorite OR remove-item)) OR
+(sdelete64 AND (aaa OR zzz)) OR
+(spool AND drivers AND x64) OR
+(teamviewer OR .log) OR
+(pointandprint) OR
+(reg AND lanmanserver) OR
+(EveryoneIncludesAnonymous) OR
+(RestrictAnonymous) OR
+((cmd) AND (.vhd OR .bac OR .bak OR .wbcat OR .bkf OR .set OR .win OR .dsk)) OR
+( advanced AND ip AND scanner AND 2) OR
+(outlook AND .lnk) OR
+(elevation_service.exe AND msiexec) OR
+(icacls AND .ini) OR
+(temp AND .dmp) OR
+(lsass.dmp) OR
+(nppspy) OR
+(lsass NOT wininit) OR
+(lsass AND (dmp OR zip OR rar OR dump)) OR
+(oracle AND java AND (.vbs OR retrieve OR retrive) AND .exe) OR
+((.vhd) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)) OR
+(.kirbi) OR
+(mimilsa.log) OR
+((winword OR excel OR powerpnt) AND (mdst OR sdiagnost OR .dll OR .ocx OR .com OR .ps1 OR .vbs OR .sys OR .bat OR .scr OR .proj)) OR
+(ntds.dit AND (cmd OR powershell OR ps)) OR
+(ConsoleHost_history.txt OR StartupProfileData-Interactive) OR
+(tasks AND (appdata OR perflogs OR systemprofile)) OR
+(users AND (winsat OR winmm)) OR
+(Windows AND Media AND osk) OR
+((wscript OR cscript) AND (.jse OR .vbe OR .js OR .vba OR .vbs)) OR
+((cmd OR powershell OR cscript OR wscript OR sh.exe OR bash.exe OR msbuild.exe OR certutil.exe) AND (public OR perflogs) AND (schtaks OR wmic OR mshta OR rundll32 OR forfiles OR scriptrunner OR certutil OR temp)) OR
+((NOT system32 NOT syswow64) AND (WsmPty.xsl OR WsmTxt.xsl)) OR
+(wbemcomn.dll) OR
+((pwdump OR kirbi OR pwhashes OR wce_ccache OR wce_krbtkts OR fgdump-log) AND (test OR lsremora OR fgexec OR wceaux OR sam.out OR security.out OR system.out OR ntds.out OR dumpext.dll OR dumpsvc.exe OR cachedump.exe OR pstgdump.exe OR servpw.exe OR sercpw64.exe OR pwdump.exe OR procdump64)) OR
+((syswow64) AND (mshta OR excel OR winword OR powerpnt OR cscript OR wscript)) OR
+(htool OR hacktool OR (asp AND backdoor) OR (jsp AND backdoor) OR (php AND backdoor) OR webshell OR portscan OR .wincred OT plugx OR korplug OR chopper OR xscan OR clearlog OR aspxspy) OR
+(MsiInstaller AND test.pkg) OR
+(imphash) OR
+(powershell AND (-w  OR -windowstyle  OR -window) AND hidden) OR
+(powershell AND reg AND add AND currentversion AND run) OR
+(bypass AND -noprofile AND hidden AND new-object AND sytem.net.webclient AND .download) OR
+(convert AND frombase64string) OR
+(dumpert) OR
+(updata) OR
+(127.0 AND Admin) OR
+(users AND config AND rclone) OR
+(vbaproject.otm AND outlook) OR
+(temp AND (\SAM OR hive)) OR
+(winword AND inetcache AND .cab) OR
+(temp AND .inf) OR
+(users AND desktop AND txt) OR
+(.cmdline) OR
+(custom AND .sdb) OR
+(unattend.xml) OR
+(scrcons.exe) OR
+(api-ms-win-core-kernel32-legacy-l1.DLL) OR
+(ieinstal AND temp AND consent) OR
+(users AND pe396) OR
+(consent AND comctl32) OR
+(programs AND startup AND mstsc.exe) OR
+(profile.ps1) OR
+(procexp152.sys AND temp) OR
+(.pfx) OR
+(desktop.ii NOT C:\Windows OR "C:\Program Files") OR
+(CLR AND usagelogs AND (mshta OR cscript OR wscript OR regsvr32 OR wmic OR rundll32 OR svchost)) OR
+(.sch AND schcache (NOT svchost NOT dllhost NOT mmc.exe NOT powershell NOT ccmexec NOT cylance)) OR
+(start AND menu AND programs AND startup) OR
+(tmp AND .bat AND .dll) OR
+(temp AND SAM AND .dmp) OR
+(poweshell AND startup AND .lnk) OR
+(.ps1 AND (invoke-dllinjection OR invoke-wmicommand OR get-gppassword OR get-keystrike OR get-vaultcredential OR invoke-credential OR -ninjacopy OR tokenmanipulation OR minidump OR shadowcopytools OR reflectiveprinjection OR timedscreeshot OR userhunter OR gpolocation OR aclscanner OR downgradeaccount OR serviceunqquoted OR servicefilepermission OR servicepermission OR serviceabuse OR servicebiany OR regautologon OR vulnautorun OR vulnschtask OR unattendedinstallfile OR webconfig OR applicationhost OR regalwaysinstallelevated OR unconstrained OR regbackdoor OR scrnsavebackdoor OR backdoor OR duplicatetoken OR psuacme OR remove-update OR check-vm OR lsasecret OR passhashes OR targetscreen OR port-scan OR poshrathttp OR powershelltcp OR powershellwmi OR exfiltration OR persistence OR captureserver OR shellcode OR chromedump OR clipboardcontents OR foxdump OR indexteditem OR screenshot OR inveigh OR netripper OR egresscheck OR postexfil OR psinject OR runas OR mailraider OR honeyhash OR macattribute OR dssync OR powerdump OR jboss OR thunderstruck OR voicetroll OR wallpaper OR psexec OR sshcommand OR securitypackages OR install-ssp OR backdoorlnk OR powerbreach OR sitelistpassword OR bypassuac OR tater OR wscriptbypassUAC OR powerup OR powerview OR rickastley OR find-fruit OR http-login trusteddocuments OR paranoia OR winenum OR arpscan portscan OR reversednslookup OR smbscanner OR mimikittenz)) OR
+(ba9ea7344a4a5f591d6e5dc32a13494b) OR
+(outlook AND appdata AND forms) OR
+((startup AND (word OR excel OR powerpnt) AND (.wll OR .xll))) OR
+(microsoft AND addins AND (.xlam OR .xla)) OR
+(temp AND dubug.bin) OR
+(powershell AND .bat) OR
+(umworkerprocess.exe NOT cleanup.bin NOT .txt NOT .log NOT .cfg) OR
+(svchost OR rundll32 OR services OR powershell OR regsvr32 OR spoolsv OR lsass OR smss OR csrss OR conhost OR wininit OR lsm OR winlogon OR explorer.exe OR taskhost OR task,gr OR sihost OR runtimebroker OR smartscreen OR dllhost OR audiodg NOT system32 NOT syswow64 NOT winsxs NOT dism NOT setuphost) OR
+(updata AND oci.dll) OR
+(MoriyaStreamWatchmen.sys) OR
+(physmem.sys OR imjpueact OR imtcprot OR imecpmeid OR pac.dat OR tuptask.dat OR startwus.dat OR wimbootconfiguations.ini) OR
+((SAM_USER OR SAM_GROUP) AND (512 OR 502 OR 500 OR 505 OR 519 OR 520 OR 544 OR551 OR 555)) OR
+(powershell AND frombase64string) OR
+(Enable-WindowsOptionalFeature) OR
+(wmic AND (shadowcopy OR UUID OR delete)) OR
+(wmic AND process AND node) OR
+(schtasks AND start) OR
+(schtasks AND (temp OR tmp)) OR
+(attrib AND +h) OR
+(runonce AND .exe) OR
+(net AND (group OR localgroup) AND admin) OR
+(mshta AND public) OR
+(regedit AND -single) OR
+(netsh AND new AND enable AND yes) OR
+(netsh AND allowedprogram) OR
+(shadowcopy AND wmi) OR
+(uninstall-windowsfeature AND defender) OR
+(disablerealtimemonitoring) OR
+(disableantispyware) OR
+(DisableBehaviorMonitoring) OR
+(disableantivirus) OR
+(DisableIOAVProtection) OR
+(DisableOnAccessProtection) OR
+(reg AND defender) OR
+(reg AND CurrentControlSet) OR
+(DefenderApiLogger) OR
+(ContextMenuHandlers) OR
+(-ExclusionExtension) OR
+(disable AND defender) OR
+(MpCmdRun AND remove) OR
+(schtasks AND defender) OR
+((temp OR tmp)AND bat) OR
+(conf AND log) OR
+(ping AND nul AND del) OR
+(cmd and (token OR tokens)) OR
+(wevtutil AND cl) OR
+(lsass AND proc) OR
+(comsvcs.dll) OR
+(dsquery AND subnet) OR
+(test AND dclist) OR
+(quser) OR
+(net AND view AND (all OR domain)) OR
+(takeown) OR
+(Enable-NetFirewallRule) OR
+(set-itemproperty AND (HKLM OR HKCU)) OR
+(msiexec AND (http: OR https:)) OR
+(resize AND shadow) OR
+(net AND stop AND "/y") OR
+(sc AND config AND disabled) OR
+(iisreset) OR
+(wmic AND (node OR netlogin) AND get) OR
+(wmic AND call) OR
+(debugger AND "Image File Execution")
