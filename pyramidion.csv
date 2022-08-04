@@ -55,7 +55,7 @@
 54,ftp shenanigans,(ftp AND (-v OR -n OR -s)),https://www.hostinger.com/tutorials/what-is-ftp,1
 55,System.Net.WebClient,(powershell AND System.Net.WebClient),https://stackoverflow.com/questions/41819606/how-to-download-a-file-with-powershell-system-net-webclient-and-custom-user-agen,1
 56,tftp,(tftp AND put),https://superuser.com/questions/581812/put-file-with-tftp-client-in-linux,1
-57,buffers,(kernel32.dll OR msvcrt.dll) AND (memset OR virtualalloc OR createthread)),https://www.pinvoke.net/default.aspx/msvcrt/memset.html,1
+57,buffers,((kernel32.dll OR msvcrt.dll) AND (memset OR virtualalloc OR createthread)),https://www.pinvoke.net/default.aspx/msvcrt/memset.html,1
 58,unrestricted execution policy,(powershell AND Unrestricted),https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2,1
 59,tasklist,(tasklist AND /SVC),https://www.computerhope.com/tasklist.htm,1
 60,systeminfo,(systeminfo AND findstr),https://www.windows-commandline.com/system-information-systeminfo-command/,1
@@ -93,7 +93,7 @@
 92,UAC bypasses,(ms-settings AND Shell AND Open AND command),https://pentestlab.blog/2017/06/07/uac-bypass-fodhelper/,1
 93,UAC bypasses,(HKCU AND shell AND command),https://social.technet.microsoft.com/Forums/en-US/58ceb750-29ef-4262-a626-6cc132611d2f/trying-to-change-hkcu-registry-value-shell-in-a-task-sequence?forum=configmanagerosd,1
 94,remote thread,(kernel32dll AND loadlibraryA),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/create_remote_thread/sysmon_createremotethread_loadlibrary.yml,1
-95,powershell remote thread,(powershell AND rundll32,https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/create_remote_thread/sysmon_susp_powershell_rundll32.yml,1
+95,powershell remote thread,(powershell AND rundll32),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/create_remote_thread/sysmon_susp_powershell_rundll32.yml,1
 96,powershell non interactive,(powershell AND (-noni OR -noninteractive)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/deprecated/powershell_suspicious_invocation_generic.yml,1
 97,,(powershell AND syncAppvPublishingServer.exe),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/deprecated/powershell_syncappvpublishingserver_exe.yml,1
 98,Esentutil shadow copy edits,(esentu AND (vss OR /y)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/deprecated/win_susp_esentutl_activity.yml,1
@@ -108,7 +108,7 @@
 107,DNS Query for IP Lookup Service APIs,((ipv4.icanhazip.com OR canireachthe.net OR ip.anysrc.net edns.ip-api.com OR wtfismyip.com OR checkip.dyndns.org  OR api.2ip.ua OR icanhazip.com OR api.ipify.org OR ip-api.com OR checkip.amazonaws.com  OR ipecho.net OR ipinfo.io OR ipv4bot.whatismyipaddress.com OR freegeoip.app) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/dns_query/dns_net_susp_ipify.yml,1
 108,DNS HybridConnectionManager Service Bus,((servicebus.windows.net OR HybridConnectionManager) AND (listener)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/dns_query/dns_query_hybridconnectionmgr_servicebus.yml,1
 109,DNS Query for MEGA.io Upload Domain,(userstorage.mega.co.nz),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/dns_query/dns_query_mega_nz.yml,1
-110,,(rundll32 AND (javascript OR js)),https://isc.sans.edu/forums/diary/From+RunDLL32+to+JavaScript+then+PowerShell/27428/,1
+110,Rundll and JS,(rundll32 AND (javascript OR js)),https://isc.sans.edu/forums/diary/From+RunDLL32+to+JavaScript+then+PowerShell/27428/,1
 111,,(getobject AND script),https://docs.partnerconnect.elliemae.com/partnerconnect/reference/interacting-with-scripting-objects,1
 112,,(MSBuild.exe),https://heimdalsecurity.com/blog/hackers-abuse-microsofts-msbuild-platform-to-deploy-malware/,1
 113,,((regsvcs OR regasm OR InstallUtil) AND (.dll)),https://blog.actorsfit.com/a?ID=00550-75440115-db83-4a5f-a9f6-174b6ce632ee,1
@@ -122,12 +122,12 @@
 121,,((prefetch OR .pf) AND (svchost OR autorite OR remove-item)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/sysmon_delete_prefetch.yml,1
 122,,(sdelete64 AND (aaa OR zzz)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/sysmon_sysinternals_sdelete_file_deletion.yml,1
 123,CVE 2021 1675,(spool AND drivers AND x64),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/win_cve_2021_1675_printspooler_del.yml,1
-124,,(teamviewer OR .log),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/win_fd_delete_appli_log.yml,1
+124,Teamviewer log deletion,(teamviewer OR .log),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/win_fd_delete_appli_log.yml,1
 125,SpoolSV registry,(pointandprint),https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.Printing::PointAndPrint_Restrictions_Win7,1
-126,,(reg AND lanmanserver),https://www.techtarget.com/searchvirtualdesktop/opinion/Updated-Lanmanserver-and-Lanmanworkstation-Tuning,1
-127,,(EveryoneIncludesAnonymous),https://www.stigviewer.com/stig/windows_server_2012_member_server/2014-01-07/finding/V-3377,1
-128,,(RestrictAnonymous),https://www.stigviewer.com/stig/windows_server_2012_member_server/2014-01-07/finding/V-3377,1
-129,,((cmd) AND (.vhd OR .bac OR .bak OR .wbcat OR .bkf OR .set OR .win OR .dsk)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/win_fd_delete_backup_file.yml,1
+126,Lanmanserver Registry edits,(reg AND lanmanserver),https://www.techtarget.com/searchvirtualdesktop/opinion/Updated-Lanmanserver-and-Lanmanworkstation-Tuning,1
+127,EveryoneIncludesAnonymous Powershell arg,(EveryoneIncludesAnonymous),https://www.stigviewer.com/stig/windows_server_2012_member_server/2014-01-07/finding/V-3377,1
+128,Restrict Anonymous,(RestrictAnonymous),https://www.stigviewer.com/stig/windows_server_2012_member_server/2014-01-07/finding/V-3377,1
+129,Odd file extensions with CMD,((cmd) AND (.vhd OR .bac OR .bak OR .wbcat OR .bkf OR .set OR .win OR .dsk)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_delete/win_fd_delete_backup_file.yml,1
 130,advancedIPscanner2,( advanced AND ip AND scanner AND 2),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_advanced_ip_scanner.yml,1
 131,.lnk extension in outlook,(outlook AND .lnk),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_apt_unidentified_nov_18.yml,1
 132,CVE-2021-41379,(elevation_service.exe AND msiexec),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_cve_2021_41379_msi_lpe.yml,1
@@ -141,7 +141,7 @@
 140,VHD Image Download From Browser,((.vhd) AND (chrome OR iexplore OR firefox OR brave OR opera OR msedge OR vivaldi)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_mal_vhd_download.yml,1
 141,Mimikatz Kirbi File Creation,(.kirbi),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_mimikatz_kirbi_file_creation.yml,1
 142,Mimikatz MemSSP Default Log File Creation,(mimilsa.log),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_mimimaktz_memssp_log_file.yml,1
-143,Created Files by Office Applications,((winword OR excel OR powerpnt) AND ((mdst OR sdiagnost OR .dll OR .ocx OR .com OR .ps1 OR .vbs OR .sys OR .bat OR .scr OR .proj)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_script_creation_by_office_using_file_ext.yml,1
+143,Created Files by Office Applications,((winword OR excel OR powerpnt) AND (mdst OR sdiagnost OR .dll OR .ocx OR .com OR .ps1 OR .vbs OR .sys OR .bat OR .scr OR .proj)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_script_creation_by_office_using_file_ext.yml,1
 144,Suspicious Process Writes Ntds.dit,(ntds.dit AND (cmd OR powershell OR ps),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_susp_ntds_dit.yml,1
 145,Suspicious Interactive PowerShell as SYSTEM,(ConsoleHost_history.txt OR StartupProfileData-Interactive),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_susp_system_interactive_powershell.yml,1
 146,Scheduled Task Write to System32 Tasks,(tasks AND (appdata OR perflogs OR systemprofile)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_susp_task_write.yml,1
@@ -184,7 +184,7 @@
 183,PFX file creation,(.pfx),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_susp_pfx_file_creation.yml,1
 184,Desktop.ini,"(desktop.ii NOT C:\Windows OR ""C:\Program Files"")",https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_susp_desktop_ini.yml,1
 185,CLR log creation,(CLR AND usagelogs AND (mshta OR cscript OR wscript OR regsvr32 OR wmic OR rundll32 OR svchost)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_susp_clr_logs.yml,1
-186,ADSI-Usage,(.sch AND schcache (NOT svchost NOT dllhost NOT mmc.exe NOT powershell NOT ccmexec NOT cylance))),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_susp_adsi_cache_usage.yml,1
+186,ADSI-Usage,(.sch AND schcache (NOT svchost NOT dllhost NOT mmc.exe NOT powershell NOT ccmexec NOT cylance)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_susp_adsi_cache_usage.yml,1
 187,Startup Folder Write,(start AND menu AND programs AND startup),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_startup_folder_file_write.yml,1
 188,Recmimicry,(tmp AND .bat AND .dll),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_redmimicry_winnti_filedrop.yml,1
 189,quarksPwDump,(temp AND SAM AND .dmp),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_quarkspw_filedump.yml,1
@@ -192,7 +192,7 @@
 191,Malciious powershell cmdlets,(.ps1 AND (invoke-dllinjection OR invoke-wmicommand OR get-gppassword OR get-keystrike OR get-vaultcredential OR invoke-credential OR -ninjacopy OR tokenmanipulation OR minidump OR shadowcopytools OR reflectiveprinjection OR timedscreeshot OR userhunter OR gpolocation OR aclscanner OR downgradeaccount OR serviceunqquoted OR servicefilepermission OR servicepermission OR serviceabuse OR servicebiany OR regautologon OR vulnautorun OR vulnschtask OR unattendedinstallfile OR webconfig OR applicationhost OR regalwaysinstallelevated OR unconstrained OR regbackdoor OR scrnsavebackdoor OR backdoor OR duplicatetoken OR psuacme OR remove-update OR check-vm OR lsasecret OR passhashes OR targetscreen OR port-scan OR poshrathttp OR powershelltcp OR powershellwmi OR exfiltration OR persistence OR captureserver OR shellcode OR chromedump OR clipboardcontents OR foxdump OR indexteditem OR screenshot OR inveigh OR netripper OR egresscheck OR postexfil OR psinject OR runas OR mailraider OR honeyhash OR macattribute OR dssync OR powerdump OR jboss OR thunderstruck OR voicetroll OR wallpaper OR psexec OR sshcommand OR securitypackages OR install-ssp OR backdoorlnk OR powerbreach OR sitelistpassword OR bypassuac OR tater OR wscriptbypassUAC OR powerup OR powerview OR rickastley OR find-fruit OR http-login trusteddocuments OR paranoia OR winenum OR arpscan portscan OR reversednslookup OR smbscanner OR mimikittenz)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_powershell_exploit_scripts.yml,1
 192,PCRE Package Temp Files,(ba9ea7344a4a5f591d6e5dc32a13494b),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_pcre_net_temp_file.yml,1
 193,Outlook Form Installation,(outlook AND appdata AND forms),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_outlook_newform.yml,1
-194,Microsoft Office Add-In loading,((startup OR  AND (word OR excel OR powerpnt) AND (.wll OR .xll) ),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_office_persistence.yml,1
+194,Microsoft Office Add-In loading,((startup OR  AND (word OR excel OR powerpnt) AND (.wll OR .xll))),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_office_persistence.yml,1
 195,Microsoft Addons Add-In loading,(microsoft AND addins AND (.xlam OR .xla)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_office_persistence.yml,1
 196,SafetyKatz,(temp AND dubug.bin),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_ghostpack_safetykatz.yml,1
 197,Powershell and .bat,(powershell AND .bat),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/sysmon_detect_powerup_dllhijacking.yml,1
@@ -202,58 +202,58 @@
 201,Moriya Rootkit,(MoriyaStreamWatchmen.sys),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_moriya_rootkit.yml,1
 202,CVE 2021 31979,(physmem.sys OR imjpueact OR imtcprot OR imecpmeid OR pac.dat OR tuptask.dat OR startwus.dat OR wimbootconfiguations.ini),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/file_event/file_event_cve_2021_31979_cve_2021_33771_exploits.yml,1
 203,AD Privileged Users or Groups Reconnaissance,((SAM_USER OR SAM_GROUP) AND (512 OR 502 OR 500 OR 505 OR 519 OR 520 OR 544 OR551 OR 555)),https://github.com/SigmaHQ/sigma/blob/eb382c4a59b6d87e186ee269805fe2db2acf250e/rules/windows/builtin/security/win_account_discovery.yml,1
-204,,,,1
-205,,,,1
-206,,,,1
-207,,,,1
-208,,,,1
-209,,,,1
-210,,,,1
-211,,,,1
-212,,,,1
-213,,,,1
-214,,,,1
-215,,,,1
-216,,,,1
-217,,,,1
-218,,,,1
-219,,,,1
-220,,,,1
-221,,,,1
-222,,,,1
-223,,,,1
-224,,,,1
-225,,,,1
-226,,,,1
-227,,,,1
-228,,,,1
-229,,,,1
-230,,,,1
-231,,,,1
-232,,,,1
-233,,,,1
-234,,,,1
-235,,,,1
-236,,,,1
-237,,,,1
-238,,,,1
-239,,,,1
-240,,,,1
-241,,,,1
-242,,,,1
-243,,,,1
-244,,,,1
-245,,,,1
-246,,,,1
-247,,,,1
-248,,,,1
-249,,,,1
-250,,,,1
-251,,,,1
-252,,,,1
-253,,,,1
-254,,,,1
-255,,,,1
+204,Decoding base64,(powershell AND frombase64string),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+205,Weird poweshell enable feature,(Enable-WindowsOptionalFeature),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+206,WMIC shadowcopy edits,(wmic AND (shadowcopy OR UUID OR delete)),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+207,WMIC process rmeote edits,(wmic AND process AND node),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+208,Schtasks start schedule,(schtasks AND start),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+209,schtasks out of temp,(schtasks AND (temp OR tmp)),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+210,hide files,(attrib AND +h),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+211,runonce executables,(runonce AND .exe),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+212,enumeration for admin groups,(net AND (group OR localgroup) AND admin),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+213,mshta out of public files,(mshta AND public),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+214,regedit single,(regedit AND -single),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+215,New firewall rule,(netsh AND new AND enable AND yes),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+216,firewall allow program,(netsh AND allowedprogram),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+217,WMI shadowcopy usage,(shadowcopy AND wmi),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+218,Uninstalling windows Defende,(uninstall-windowsfeature AND defender),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+219,Disabling logging with realtimemonitoring,(disablerealtimemonitoring),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+220,disabling anti spyware,(disableantispyware),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+221,disable behavioral monitoring,(DisableBehaviorMonitoring),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+222,,(disableantivirus),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+223,,(DisableIOAVProtection),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+224,,(DisableOnAccessProtection),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+225,,(reg AND defender),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+226,,(reg AND CurrentControlSet),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+227,,(DefenderApiLogger),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+228,,(ContextMenuHandlers),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+229,,(-ExclusionExtension),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+230,,(disable AND defender),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+231,,(MpCmdRun AND remove),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+232,,(schtasks AND defender),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+233,,((temp OR tmp)AND bat),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+234,,(conf AND log),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+235,,(ping AND nul AND del),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+236,,(cmd and (token OR tokens)),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+237,,(wevtutil AND cl),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+238,,(lsass AND proc),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+239,,(comsvcs.dll),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+240,,(dsquery AND subnet),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+241,,(test AND dclist),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+242,,(quser),https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/quser,1
+243,,(net AND view AND (all OR domain)),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+244,,(takeown),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+245,,"(mstsc AND ""$"")",https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+246,,(Enable-NetFirewallRule),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+247,,(set-itemproperty AND (HKLM OR HKCU)),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+248,,(msiexec AND (http: OR https:)),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+249,,(resize AND shadow),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+250,,"(net AND stop AND ""/y"")",https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+251,,(sc AND config AND disabled),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+252,,(iisreset),https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2022/06/23093553/Common-TTPs-of-the-modern-ransomware_low-res.pdf,1
+253,,(wmic AND (node OR netlogin) AND get),Red Team Hand Book,1
+254,,(wmic AND call),Red Team Hand Book,1
+255,,"(debugger AND ""Image File Execution"")",https://blog.malwarebytes.com/101/2015/12/an-introduction-to-image-file-execution-options/,1
 256,,,,1
 257,,,,1
 258,,,,1
